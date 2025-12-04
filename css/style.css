@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.game-container {
+    max-width: 850px;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    border: 2px solid #00ffff;
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #00ffff;
+}
+
+.game-header h1 {
+    font-size: 2.5rem;
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+    margin-bottom: 15px;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    font-size: 1.2rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #444;
+}
+
+.game-stats div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 120px;
+}
+
+.game-stats span {
+    font-weight: bold;
+    color: #ffd700;
+    font-size: 1.5rem;
+    margin-top: 5px;
+}
+
+.level-name {
+    font-size: 1rem;
+    color: #00ffaa;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto 20px;
+    border: 3px solid #333;
+    border-radius: 10px;
+    background: #000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.control-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 200px;
+}
+
+.main-controls, .level-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #444;
+}
+
+.level-controls h4 {
+    color: #00ffff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.control-buttons button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#startBtn {
+    background: linear-gradient(to bottom, #4CAF50, #2E7D32);
+    color: white;
+}
+
+#startBtn:hover {
+    background: linear-gradient(to bottom, #66BB6A, #388E3C);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+#pauseBtn {
+    background: linear-gradient(to bottom, #FF9800, #F57C00);
+    color: white;
+}
+
+#pauseBtn:hover {
+    background: linear-gradient(to bottom, #FFB74D, #FF9800);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+}
+
+#restartBtn {
+    background: linear-gradient(to bottom, #f44336, #D32F2F);
+    color: white;
+}
+
+#restartBtn:hover {
+    background: linear-gradient(to bottom, #EF5350, #E53935);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
+}
+
+.level-controls button {
+    background: linear-gradient(to bottom, #9C27B0, #7B1FA2);
+    color: white;
+    font-size: 0.9rem;
+    padding: 10px;
+}
+
+.level-controls button:hover {
+    background: linear-gradient(to bottom, #BA68C8, #9C27B0);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(156, 39, 176, 0.4);
+}
+
+.instructions {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #444;
+}
+
+.instructions h3 {
+    color: #00ffff;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    border-bottom: 1px solid #00ffff;
+    padding-bottom: 5px;
+}
+
+.instructions p {
+    margin: 8px 0;
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.instructions p:last-child {
+    margin-top: 15px;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+    }
+    
+    .control-buttons {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .main-controls, .level-controls {
+        min-width: 180px;
+    }
+    
+    .game-header h1 {
+        font-size: 2rem;
+    }
+    
+    .game-stats {
+        font-size: 1rem;
+        gap: 20px;
+    }
+    
+    .game-stats span {
+        font-size: 1.3rem;
+    }
+}
