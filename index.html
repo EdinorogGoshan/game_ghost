@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost Adventure</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>Ghost Adventure</h1>
+            <div class="game-stats">
+                <div class="score">Очки: <span id="score">0</span></div>
+                <div class="lives">Жизни: <span id="lives">3</span></div>
+                <div class="level">Уровень: <span id="level">1</span></div>
+                <div class="level-name" id="levelName">Начальный уровень</div>
+            </div>
+        </header>
+        
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <div class="controls">
+            <div class="control-buttons">
+                <div class="main-controls">
+                    <button id="startBtn">Старт</button>
+                    <button id="pauseBtn">Пауза</button>
+                    <button id="restartBtn">Рестарт</button>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <h3>Управление:</h3>
+                <p>← → или A D - Движение влево/вправо</p>
+                <p>SPACE или W - Прыжок</p>
+                <p>P - Пауза/Продолжить игру</p>
+                <p>H - Включить/выключить отладку</p>
+                <p>F1 - Альтернативная отладка</p>
+                <p>1-3 - Быстрый выбор уровня</p>
+                <p>Собирайте огоньки для очков!</p>
+                <p>Прыгайте на врагов сверху для бонусов!</p>
+                <p>Избегайте шипов на платформах!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Загрузка файлов -->
+    <script src="js/InputHandler.js"></script>
+    <script src="js/TileSystem.js"></script>
+    <script src="js/Platform.js"></script>
+    <script src="js/Collectible.js"></script>
+    <script src="js/Enemy.js"></script>
+    <script src="js/Collision.js"></script>
+    <script src="js/Player.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
